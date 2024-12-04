@@ -3,7 +3,7 @@ import {useState} from 'react'
 import { SafeAreaView, View, ScrollView, TextInput, Text, Button, StyleSheet } from 'react-native';
 
 const Createdata = () => {
-    const jsonUrl = 'http://192.168.114.109:3000/mahasiswa'; //API yg digunakan emulator untuk akses localhost komputer
+    const jsonUrl = 'http://192.168.1.18:3000/mahasiswa'; //API yg digunakan emulator untuk akses localhost komputer
     const [first_name, setFirstName] = useState('');
     const [last_name, setLastName] = useState('');
     const [kelas, setKelas] = useState('');
@@ -18,7 +18,7 @@ const Createdata = () => {
           kelas: kelas,
           gender: gender,
         };
-        fetch('http://192.168.114.109:3000/mahasiswa', {
+        fetch('http://192.168.1.18:3000/mahasiswa', {
           method: 'POST',
           headers: {
             'Accept': 'application/json',
