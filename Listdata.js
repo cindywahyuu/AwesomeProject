@@ -1,12 +1,12 @@
 import React from 'react'
-import { View, Text, StyleSheet, TouchableOpacity, FlatList, Button, Alert } from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity, FlatList, Button, Alert, ImageBackground } from 'react-native'
 import { useEffect, useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faGraduationCap, faChevronRight, faHiking } from '@fortawesome/free-solid-svg-icons'
 
 const Listdata = () => {
-  const jsonUrl = 'http://192.168.1.8:3000/pendaki';
+  const jsonUrl = 'http://192.168.110.194:3000/pendaki';
   const [isLoading, setLoading] = useState(true);
   const [dataUser, setDataUser] = useState({});
   const [refresh, setRefresh] = useState(false);
@@ -46,6 +46,10 @@ const Listdata = () => {
 
 
   return (
+    <ImageBackground
+            source={require('./assets/images/Background.png')} // Ganti dengan path gambar yang sesuai
+            style={styles.background}
+          >
     <SafeAreaView>
       {isLoading ? (
         <View style={{ alignItems: 'center', marginTop: 20 }}>
@@ -111,6 +115,7 @@ const Listdata = () => {
         </View>
       )}
     </SafeAreaView>
+    </ImageBackground>
 
   )
 }
@@ -118,6 +123,14 @@ const Listdata = () => {
 export default Listdata
 
 const styles = StyleSheet.create({
+  background: {
+    flex: 1,
+    resizeMode: 'cover',
+  },
+  safeArea: {
+    flex: 1,
+    backgroundColor: 'rgba(172, 157, 157, 0.8)', // Overlay gelap untuk teks lebih terbaca
+  },
   title: {
     paddingVertical: 12,
     backgroundColor: '#333',
@@ -133,14 +146,14 @@ const styles = StyleSheet.create({
   cardtitle: {
     fontSize: 12, // Ukuran teks judul lebih kecil
     fontWeight: 'bold',
-    color: '#333', // Tambahkan warna untuk memperjelas
+    color: 'black', // Tambahkan warna untuk memperjelas
     marginBottom: 2, // Jarak antar teks
   },
   card: {
     flexDirection: 'row',
     padding: 15, // Kurangi padding untuk menghemat ruang
     borderRadius: 10,
-    backgroundColor: 'rgba(44, 223, 154, 0.15)',
+    backgroundColor: 'rgba(255, 255, 255, 0.8)',
     shadowColor: '#000',
     shadowOffset: {
       width: 1,
@@ -176,4 +189,4 @@ const styles = StyleSheet.create({
     paddingTop: 5,
     paddingBottom: 15, // Kurangi padding bawah
   },
-});
+})

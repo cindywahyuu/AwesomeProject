@@ -1,13 +1,13 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { SafeAreaView, View, ScrollView, TextInput, Text, Button, StyleSheet, FlatList } from 'react-native';
+import { SafeAreaView, View, ScrollView, TextInput, Text, Button, StyleSheet, FlatList, ImageBackground } from 'react-native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faPenToSquare, faGraduationCap, faHiking } from '@fortawesome/free-solid-svg-icons';
 import { TouchableOpacity } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 
 const Createdata = () => {
-  const jsonUrl = 'http://192.168.1.8:3000/pendaki'; // API untuk emulator
+  const jsonUrl = 'http://192.168.110.194:3000/pendaki'; // API untuk emulator
   const [nama_lengkap, setNamaLengkap] = useState('');
   // const [jenis_kelamin, setJenisKelamin] = useState('');
   const [hp_pribadi, setHpPribadi] = useState('');
@@ -84,6 +84,10 @@ const Createdata = () => {
   };
 
   return (
+     <ImageBackground
+        source={require('./assets/images/Background.png')} // Ganti dengan path gambar yang sesuai
+        style={styles.background}
+      >
     <SafeAreaView>
       <View>
         {isLoading ? (
@@ -184,12 +188,22 @@ const Createdata = () => {
         )}
       </View>
     </SafeAreaView>
+    </ImageBackground>
   );
 };
 
 export default Createdata;
 
 const styles = StyleSheet.create({
+  
+  background: {
+    flex: 1,
+    resizeMode: 'cover',
+  },
+  safeArea: {
+    flex: 1,
+    backgroundColor: 'rgba(172, 157, 157, 0.4)', // Overlay gelap untuk teks lebih terbaca
+  },
   title: {
     paddingVertical: 12,
     backgroundColor: '#333',
@@ -204,11 +218,12 @@ const styles = StyleSheet.create({
   },
   input: {
     borderWidth: 1,
-    borderColor: '#777',
+    borderColor: 'white',
     borderRadius: 8,
     padding: 8,
     width: '100%',
     marginVertical: 5,
+    backgroundColor: 'rgba(255, 251, 251, 0.8)',
   },
   button: {
     marginVertical: 10,
@@ -225,7 +240,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     padding: 20,
     borderRadius: 10,
-    backgroundColor: 'white',
+    backgroundColor: 'rgba(255, 251, 251, 0.8)',
     shadowColor: '#000',
     shadowOffset: {
       width: 1,

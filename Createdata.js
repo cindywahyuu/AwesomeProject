@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { SafeAreaView, View, ScrollView, TextInput, Text, Button, StyleSheet } from 'react-native';
+import { SafeAreaView, View, ScrollView, TextInput, Text, Button, StyleSheet, ImageBackground } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 
 const Createdata = () => {
-  const jsonUrl = 'http://192.168.1.8:3000/pendaki'; // API untuk emulator
+  const jsonUrl = 'http://192.168.110.194:3000/pendaki'; // API untuk emulator
   const [nama_lengkap, setNamaLengkap] = useState('');
   const [jenis_Kelamin, setJenisKelamin] = useState('');
   const [hp_pribadi, setHpPribadi] = useState('');
@@ -50,6 +50,10 @@ const Createdata = () => {
   };
 
   return (
+    <ImageBackground
+    source={require('./assets/images/Background.png')} // Ganti dengan path gambar yang sesuai
+    style={styles.background}
+  >
     <SafeAreaView>
       <View>
         <Text style={styles.title}>Registrasi Pendakian AltitudeXplorer</Text>
@@ -118,14 +122,25 @@ const Createdata = () => {
 
           <Button title="Simpan" style={styles.button} onPress={submit} />
         </ScrollView>
+      
       </View>
     </SafeAreaView>
+    </ImageBackground>
   );
 };
 
 export default Createdata;
 
 const styles = StyleSheet.create({
+
+  background: {
+    flex: 1,
+    resizeMode: 'cover',
+  },
+  safeArea: {
+    flex: 1,
+    backgroundColor: 'rgba(0, 0, 0, 0.8)', // Overlay gelap untuk teks lebih terbaca
+  },
   title: {
     paddingVertical: 12,
     backgroundColor: '#333',
@@ -133,6 +148,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     textAlign: 'center',
+    marginBottom: 10,
   },
   form: {
     padding: 10,
@@ -145,9 +161,15 @@ const styles = StyleSheet.create({
     padding: 8,
     width: '100%',
     marginVertical: 5,
+    backgroundColor: 'rgba(255, 251, 251, 0.8)',
   },
   button: {
     marginVertical: 10,
     color: 'green',
   },
-});
+  label: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    marginVertical: 5,
+  },
+})

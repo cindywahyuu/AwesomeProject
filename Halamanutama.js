@@ -16,14 +16,14 @@ const IntroScreen = () => {
       <ScrollView contentContainerStyle={styles.scrollContainer}>
         <View style={styles.backgroundImageContainer}>
           <Image
-            source={{ uri: 'https://indonesia-az.com/wp-content/uploads/2019/05/Lansekap-Gunung-Kembang-Indonesia-A-Z-1024x575.jpg' }} // Ganti dengan URL gambar gunung Anda
+            source={require('./assets/images/HomeB2.png')} // Ganti dengan URL gambar gunung Anda
             style={styles.backgroundImage}
           />
         </View>
         <View style={styles.overlay}>
           <View style={styles.header}>
             <Image
-              source={{ uri: 'https://example.com/logo.png' }} // Ganti dengan URL logo Anda
+              source={require('./assets/images/Background.png')}  // Ganti dengan URL logo Anda
               style={styles.logo}
             />
             <Text style={styles.title}>AltitudeXplorer</Text>
@@ -104,30 +104,32 @@ const styles = StyleSheet.create({
     marginBottom: 15,
   },
   title: {
-    fontSize: 40,
+    fontSize: 50,
     fontWeight: 'bold',
     color: 'white',
     textAlign: 'center',
   },
   introSection: {
-    marginBottom: 30,
-    marginTop: 80,
+    marginBottom: 1, // Reduced marginTop here to bring content up
+    marginTop: 10,    // Reduced marginTop for the intro section
   },
   subtitle: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: '#4CAF50',
+    color: 'orange',
     marginBottom: 10,
+    marginTop: 150,
   },
   description: {
     fontSize: 20,
     color: '#fff',
     lineHeight: 30,
     textAlign: 'justify',
-    
+    marginTop: 0, // Added marginTop to create space between subtitle and description
+    marginBottom: 0,
   },
   featureSection: {
-    marginBottom: 10,
+    marginBottom: 20,
   },
   featureItem: {
     flexDirection: 'row',
