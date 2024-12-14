@@ -1,79 +1,43 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+AltitudeXplorer
 
-# Getting Started
+Aplikasi inovatif yang dirancang untuk memberikan informasi lengkap terkait pendakian gunung. Dengan fitur utama berupa registrasi pendakian gunung, aplikasi ini memudahkan pengguna dalam merencanakan perjalanan mereka. Selain itu, pengguna dapat mengakses informasi seperti:
+1. Harga Surat Izin Masuk Kawasan Konservasi (Simaksi)
+2. Estimasi waktu pendakian
+3. Basecamp jalur pendakian
+Aplikasi ini menyediakan peta interaktif yang menampilkan titik sebaran gunung yang dapat dilakukan pendakian di wilayah Jawa Tengah, memberikan pengalaman pengguna yang kaya dan informatif.
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+Komponen Pembangun Produk 
+1. React-Native
+   Diguakan untuk membangun halaman awal aplikasi dan form CRUD registrasi     pendakian
+2. Ionic Framework
+   Digunakan untuk membangun halaman peta sebaran gunung pendakian di 
+   Jawa Tengah. Ionic diintegrasikan dengan Leaflet.js untuk menampilkan 
+   peta secara interaktif
 
-## Step 1: Start the Metro Server
+Sumber Data 
+1. Data Titik Gunung: Koordinat dari Google Maps
+2. Data Atribut Gunung: Sosial Media Instagram Basecamp
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+Rencana Pengembangan aplikasi AltitudeXplorer diharapkan dapat sebagai pusat database registrasi keseluruhan pendakian gunung. 
 
-To start Metro, run the following command from the _root_ of your React Native project:
+Tampilan Aplikasi AltitudeXplorer
 
-```bash
-# using npm
-npm start
+Halaman Home
 
-# OR using Yarn
-yarn start
-```
+![Home](https://github.com/user-attachments/assets/2e5ee4b7-3700-42f0-a375-56a16ef62baa)
 
-## Step 2: Start your Application
+Halaman Map
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+![Map](https://github.com/user-attachments/assets/89e9e325-0307-4edb-9d9e-384a6272d71c)
 
-### For Android
+Halaman Registrasi
 
-```bash
-# using npm
-npm run android
+![Registrasi](https://github.com/user-attachments/assets/a95d9458-23ce-4433-b036-94438a0d5486)
 
-# OR using Yarn
-yarn android
-```
+Halaman List Registrasi Pendaki
 
-### For iOS
+![Data Pendaki](https://github.com/user-attachments/assets/1d6d04f6-0402-494c-8e3f-e2985e134dc8)
 
-```bash
-# using npm
-npm run ios
+Halaman Edit Data Registrasi
 
-# OR using Yarn
-yarn ios
-```
-
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
-
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
-
-## Step 3: Modifying your App
-
-Now that you have successfully run the app, let's modify it.
-
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
-
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+![Edit Pendaki](https://github.com/user-attachments/assets/db6fa32d-8bfd-4ab3-abfb-0300fe8d3cdf)
